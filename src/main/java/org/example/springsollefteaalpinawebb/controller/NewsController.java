@@ -14,7 +14,8 @@ import java.util.List;
 public class NewsController {
 
     @Autowired
-            private NewsRepository newsRepository;
+    private NewsRepository newsRepository;
+
     @GetMapping("news")
     public List<News> getNews(){
         return this.newsRepository.findAll(); // Localhost does not work
