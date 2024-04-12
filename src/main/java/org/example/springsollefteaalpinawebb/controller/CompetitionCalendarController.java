@@ -1,7 +1,7 @@
 package org.example.springsollefteaalpinawebb.controller;
 
-import org.example.springsollefteaalpinawebb.model.News;
-import org.example.springsollefteaalpinawebb.repository.NewsRepository;
+import org.example.springsollefteaalpinawebb.model.CompetitionCalendar;
+import org.example.springsollefteaalpinawebb.repository.CompetitionCalendarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +13,13 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("api/")
-public class NewsController {
-
+public class CompetitionCalendarController {
     @Autowired
-    private NewsRepository newsRepository;
+    private CompetitionCalendarRepository competitionCalendarRepository;
 
-    @GetMapping("news")
-    public List<News> getNews(){
-        return this.newsRepository.findAll();
+    @GetMapping("competitionCalendar")
+    public List<CompetitionCalendar> getCompetitionCalendar(){
+        return this.competitionCalendarRepository.findAll();
     }
-}
+
+    }
