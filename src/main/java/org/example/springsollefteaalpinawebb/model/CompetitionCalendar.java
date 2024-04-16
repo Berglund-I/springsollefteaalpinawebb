@@ -16,17 +16,13 @@ public class CompetitionCalendar {
     @Column(name = "event_c")
     private String event;
 
-    @Column(name = "organizer_c")
-    private String organizer;
-
     public CompetitionCalendar(){
 
     }
 
-    public CompetitionCalendar(String date, String event, String organizer) {
+    public CompetitionCalendar(String date, String event) {
         this.date = date;
         this.event = event;
-        this.organizer = organizer;
     }
 
     public long getId() {
@@ -39,15 +35,14 @@ public class CompetitionCalendar {
     public String getDate() {
         return date;
     }
-    public void setDate(String title) {
+    public void setDate(String date) {
         this.date = date;
     }
     public String getEvent() {
         return event;
     }
-    public void setEvent(String text) {
+    public void setEvent(String event) {
         this.event = event;
     }
-    public String getOrganizer() {return organizer;}
-    public void setOrganizer(String organizer) {this.organizer = organizer;}
+
 }
