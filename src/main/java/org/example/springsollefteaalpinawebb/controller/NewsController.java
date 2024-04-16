@@ -20,6 +20,6 @@ public class NewsController {
 
     @GetMapping("news")
     public List<News> getNews(){
-        return this.newsRepository.findAll(); // Localhost does not work
+        return this.newsRepository.findAll();
     }
 }
