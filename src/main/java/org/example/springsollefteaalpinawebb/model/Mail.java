@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table (name="mail")
 public class Mail {
 
+    private String from;
     private String to;
     private String subject;
     private String message;
@@ -13,6 +14,14 @@ public class Mail {
     private Long id;
 
     public Mail() {
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
     }
 
     public String getTo() {

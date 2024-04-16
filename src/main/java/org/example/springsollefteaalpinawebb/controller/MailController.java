@@ -1,9 +1,10 @@
 package org.example.springsollefteaalpinawebb.controller;
 
 import org.example.springsollefteaalpinawebb.model.Mail;
-import org.example.springsollefteaalpinawebb.repository.JavaMailSenderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -12,20 +13,27 @@ import org.springframework.web.bind.annotation.*;
 public class MailController {
 
     @Autowired
-    private JavaMailSenderRepository javaMailSenderRepository;
+    private JavaMailSender javaMailSender;
 
-  @PostMapping("/mail")
-  public void sendEmail(@RequestBody Mail mail){
-      try{
-          SimpleMailMessage message = new SimpleMailMessage();
-          message.setTo(mail.getTo());
-          message.setSubject(mail.getSubject());
-          message.setText(mail.getMessage());
+    // Så att mailet skickas till den förutbestämda mailen
+    @Value("${mail.recipient}")
+    private String recipient;
 
-      } catch (Exception e){
+    @PostMapping("/mail")
+    public void sendEmail(@RequestBody Mail mail) {
+        try {
+            // Skapa ett e-postmeddelande
+            SimpleMailMessage message = new SimpleMailMessage();
 
-      }
+            message.setTo(recipient);
+            message.setSubject("New message from " + mail.getFrom());
+            message.setText("Message content: " + mail.getMessage() + "\n\nFrom: " + mail.getFrom());
 
+            // Skicka e-postmeddelandet med JavaMailSender
+            javaMailSender.send(message);
 
-  }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
