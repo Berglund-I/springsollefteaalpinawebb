@@ -46,12 +46,6 @@ public class CompetitionCalendarScraperService {
                 }
             }
 
-            for (CompetitionCalendar calendar : calendars) {
-                System.out.println("Date: " + calendar.getDate());
-                System.out.println("Event: " + calendar.getEvent());
-                System.out.println();
-            }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
