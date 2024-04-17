@@ -8,6 +8,7 @@ public class Email {
 
     private String from;
     private String to;
+    private String name;
     private String subject;
     private String message;
     @Id
@@ -32,12 +33,18 @@ public class Email {
         this.to = to;
     }
 
+    public String getName() {
+        return name;
+    }
     public String getSubject() {
         return subject;
     }
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getMessage() {
