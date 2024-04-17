@@ -23,8 +23,9 @@ public class EmailController {
         try {
             // Create an email message
             email.setTo(recipient);
-            email.setSubject("New message from " + email.getFrom());
-            email.setMessage("Message content: " + email.getMessage() + "\n\nFrom: " + email.getFrom());
+            email.setName("Namn: " + email.getName());
+            email.setSubject("Mailadressen: " + email.getFrom());
+            email.setMessage(email.getName()  + "\nFrån: " + email.getFrom() + "\nMeddelande: " + email.getMessage());
 
             // Send the email message with EmailService
             emailSender.sendEmail(email);
