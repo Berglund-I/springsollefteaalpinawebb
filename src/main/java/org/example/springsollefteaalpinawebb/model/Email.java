@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 @Table (name="mail")
 public class Email {
 
+    private String phoneNumber;
+    private String birthDate;
     private String from;
     private String to;
     private String name;
@@ -13,6 +15,22 @@ public class Email {
     private String message;
     @Id
     private Long id;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
 
     public Email() {
     }
