@@ -25,10 +25,15 @@ public class CompetitionCalendarController {
 
     @GetMapping("competitionCalendar")
     public List<CompetitionCalendar> getCompetitionCalendar(){
-        competitionCalendarScraperService.scrapeCalendar();
-        List<CompetitionCalendar> calendars = competitionCalendarScraperService.getCalendars();
-        competitionCalendarRepository.saveAll(calendars);
-        return competitionCalendarRepository.findAll();
+        List<CompetitionCalendar> existingCalendars = competitionCalendarRepository.findAll();
+        if (existingCalendars.isEmpty()) {
+            competitionCalendarScraperService.scrapeCalendar();
+            List<CompetitionCalendar> calendars = competitionCalendarScraperService.getCalendars();
+            competitionCalendarRepository.saveAll(calendars);
+            return calendars;
+        } else {
+            return existingCalendars;
+        }
     }
 
 }
