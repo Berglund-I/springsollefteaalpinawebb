@@ -24,7 +24,7 @@ public class NewMemberEmailController {
             // Create an email message
             email.setTo(recipient);
             email.setName("Namn: " + email.getName());
-            email.setSubject("Mailadressen: " + email.getFrom());
+            email.setSubject("Bli medlem");
             email.setMessage(email.getName()  + "\nFrån: " + email.getFrom() + "\nTelefonnummer: " + email.getPhoneNumber() + "\nFödelsedatum: " + email.getBirthDate() + "\nMeddelande: " + email.getMessage());
 
             // Send the email message with EmailService
