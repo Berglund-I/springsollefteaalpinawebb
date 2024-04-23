@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Email {
 
     private String phoneNumber;
-    private String birthDate;
+    private String personalNumber;
     private String from;
     private String to;
     private String name;
@@ -15,6 +15,9 @@ public class Email {
     private String message;
     @Id
     private Long id;
+    private String parentName;
+    private String parentEmail;
+    private String parentPhoneNumber;
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -24,12 +27,12 @@ public class Email {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getBirthDate() {
-        return birthDate;
+    public String getPersonalNumber() {
+        return personalNumber;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setPersonalNumber(String personalNumber) {
+        this.personalNumber = personalNumber;
     }
 
     public Email() {
@@ -78,5 +81,29 @@ public class Email {
 
     public Long getId() {
         return id;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public String getParentEmail() {
+        return parentEmail;
+    }
+
+    public void setParentEmail(String parentEmail) {
+        this.parentEmail = parentEmail;
+    }
+
+    public String getParentPhoneNumber() {
+        return parentPhoneNumber;
+    }
+
+    public void setParentPhoneNumber(String parentPhoneNumber) {
+        this.parentPhoneNumber = parentPhoneNumber;
     }
 }
