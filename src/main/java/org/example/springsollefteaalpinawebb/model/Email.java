@@ -18,6 +18,33 @@ public class Email {
     private String parentName;
     private String parentEmail;
     private String parentPhoneNumber;
+    private String homeAddress;
+    private String village;
+    private String villageNumber;
+
+    public String getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
+    }
+
+    public String getVillage() {
+        return village;
+    }
+
+    public void setVillage(String village) {
+        this.village = village;
+    }
+
+    public String getVillageNumber() {
+        return villageNumber;
+    }
+
+    public void setVillageNumber(String villageNumber) {
+        this.villageNumber = villageNumber;
+    }
 
     public String getPhoneNumber() {
         return phoneNumber;
