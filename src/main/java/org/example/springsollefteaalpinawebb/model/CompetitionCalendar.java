@@ -16,13 +16,17 @@ public class CompetitionCalendar {
     @Column(name = "event_c")
     private String event;
 
+    @Column(name = "event_ID")
+    private String eventID;
+
     public CompetitionCalendar(){
 
     }
 
-    public CompetitionCalendar(String date, String event) {
+    public CompetitionCalendar(String date, String event, String eventID) {
         this.date = date;
         this.event = event;
+        this.eventID = eventID;
     }
 
     public long getId() {
@@ -44,5 +48,7 @@ public class CompetitionCalendar {
     public void setEvent(String event) {
         this.event = event;
     }
+    public String getEventID() { return eventID; }
+    public void setEventID(String eventID) { this.eventID = eventID; }
 
 }
