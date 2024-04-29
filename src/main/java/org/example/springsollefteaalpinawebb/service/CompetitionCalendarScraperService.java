@@ -33,13 +33,17 @@ public class CompetitionCalendarScraperService {
                 if (cells.size() > 5) {
                     String sixthCell = cells.get(5).text();
                     String fifthCell = cells.get(4).text();
-                    if ("Alpint".equals(sixthCell) && "Tärna IK Fjällvinden".equals(fifthCell)) {
+                    if ("Alpint".equals(sixthCell) && "Tänndalens IF".equals(fifthCell)) {
                         String secondCell = cells.get(1).text();
                         String thirdCell = cells.get(2).text();
+
+                        Element eventID = row.select("span[id^=ctl00_MainRegion_CalendarList1_ListViewEvents_ctrl]").first();
+                        String eventIDValue = eventID.text();
 
                         CompetitionCalendar calendar = new CompetitionCalendar();
                         calendar.setDate(secondCell);
                         calendar.setEvent(thirdCell);
+                        calendar.setEventID(eventIDValue);
 
                         calendars.add(calendar);
                     }
