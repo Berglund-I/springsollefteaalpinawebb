@@ -1,5 +1,6 @@
 package org.example.springsollefteaalpinawebb.controller;
 
+import org.example.springsollefteaalpinawebb.model.Facebook;
 import org.example.springsollefteaalpinawebb.service.FacebookService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class FacebookController {
     }
 
     @GetMapping("/facebook-feed")
-    public List<String> getFacebookFeed() {
+    public List<Facebook> getFacebookFeed() {
         return facebookService.getFacebookFeed();
     }
 }

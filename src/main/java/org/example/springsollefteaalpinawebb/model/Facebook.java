@@ -7,17 +7,14 @@ import jakarta.persistence.*;
 public class Facebook {
 
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private long id;
+        @Column(name = "id_f")
+        private String idFacebook;
 
         @Column(name = "created_time_f")
         private String createdTime;
 
         @Column(name = "message_f")
         private String message;
-
-        @Column(name = "id_f")
-        private String idFacebook;
 
         public Facebook(){
 
@@ -27,13 +24,6 @@ public class Facebook {
             this.createdTime = createdTime;
             this.message = message;
             this.idFacebook = idFacebook;
-        }
-
-        public long getId() {
-            return id;
-        }
-        public void setId(long id) {
-            this.id = id;
         }
 
         public String getCreatedTime() {return createdTime;}
