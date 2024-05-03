@@ -33,7 +33,7 @@ public class CompetitionCalendarScraperService {
                 if (cells.size() > 5) {
                     String sixthCell = cells.get(5).text();
                     String fifthCell = cells.get(4).text();
-                    if ("Alpint".equals(sixthCell) && "Tänndalens IF".equals(fifthCell)) {
+                    if ("Alpint".equals(sixthCell) && "Sollefteå A K".equals(fifthCell)) {
                         String secondCell = cells.get(1).text();
                         String thirdCell = cells.get(2).text();
 
