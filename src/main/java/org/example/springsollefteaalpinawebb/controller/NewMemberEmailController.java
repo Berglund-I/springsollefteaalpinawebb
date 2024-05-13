@@ -25,7 +25,7 @@ public class NewMemberEmailController {
             email.setTo(recipient);
             email.setName("Namn: " + email.getName());
             email.setSubject("Bli medlem");
-            email.setMessage(email.getName()  + "\nFrån: " + email.getFrom() + "\nTelefonnummer: " + email.getPhoneNumber() + "\nPersonnummer: " + email.getPersonalNumber() + "\nAdress: " + email.getHomeAddress() + "\nStad: " + email.getVillage() + "\nPostnummer: " + email.getVillageNumber() + "\nFörälders namn: " + email.getParentName() + "\nFörälders email: " + email.getParentEmail() + "\nFörälders telefonnummer: " + email.getParentPhoneNumber() + "\nMeddelande: " + email.getMessage());
+            email.setMessage(email.getName()  + "\nFrån: " + email.getFrom() + "\nTelefonnummer: " + email.getPhoneNumber() + "\nPersonnummer: " + email.getPersonalNumber() + "\nAdress: " + email.getHomeAdress() + "\nStad: " + email.getVillage() + "\nPostnummer: " + email.getVillageNumber() + "\nFörälders namn: " + email.getParentName() + "\nFörälders email: " + email.getParentEmail() + "\nFörälders telefonnummer: " + email.getParentPhoneNumber() + "\nMeddelande: " + email.getMessage());
 
             // Send the email message with EmailService
             emailSender.sendEmail(email);
