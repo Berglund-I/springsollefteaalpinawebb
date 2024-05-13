@@ -18,16 +18,16 @@ public class Email {
     private String parentName;
     private String parentEmail;
     private String parentPhoneNumber;
-    private String homeAddress;
+    private String homeAdress;
     private String village;
     private String villageNumber;
 
-    public String getHomeAddress() {
-        return homeAddress;
+    public String getHomeAdress() {
+        return homeAdress;
     }
 
-    public void setHomeAddress(String homeAddress) {
-        this.homeAddress = homeAddress;
+    public void setHomeAdress(String homeAdress) {
+        this.homeAdress = homeAdress;
     }
 
     public String getVillage() {
