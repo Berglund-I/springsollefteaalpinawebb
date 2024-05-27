@@ -18,7 +18,7 @@ public class EmailService {
     @Value("${sendgrid.api.key}")
     private String sendGridAPIKey;
 
-    private static final String YOUR_EMAIL = "02ebkar@gmail.com";
+    private static final String YOUR_EMAIL = "solleftea.alpina@gmail.com";
 
     public void sendEmail(String from, String subject, String body) {
         Email fromEmail = new Email(from);

@@ -18,8 +18,8 @@ public class EmailSender {
     private String sendGridAPIKey;
 
     public void sendEmail(org.example.springsollefteaalpinawebb.model.Email email) {
-        com.sendgrid.helpers.mail.objects.Email fromEmail = new com.sendgrid.helpers.mail.objects.Email("02ebkar@gmail.com"); // Your verified sender email address
-        com.sendgrid.helpers.mail.objects.Email toEmail = new com.sendgrid.helpers.mail.objects.Email("02ebkar@gmail.com"); // Your email address
+        com.sendgrid.helpers.mail.objects.Email fromEmail = new com.sendgrid.helpers.mail.objects.Email("solleftea.alpina@gmail.com"); // Your verified sender email address
+        com.sendgrid.helpers.mail.objects.Email toEmail = new com.sendgrid.helpers.mail.objects.Email("solleftea.alpina@gmail.com"); // Your email address
         Content content = new Content("text/plain", email.getMessage()); // The message the user entered in the form
         Mail mail = new Mail(fromEmail, email.getSubject(), toEmail, content);
 
